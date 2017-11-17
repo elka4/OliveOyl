@@ -11,7 +11,9 @@ namespace OliveOyl
 
 
         public string Poultry { get; set; }
+
         public string Vegetables { get; set; }
+
         public string Seafood { get; set; }
 
     }

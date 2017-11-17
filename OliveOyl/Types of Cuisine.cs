@@ -7,12 +7,19 @@ using System.Threading.Tasks;
 namespace OliveOyl
 {
     class Types_of_Cuisine
+
+
+        //These are the properties for my class Types of Cuisine 
+    #region Properties
     {
+
 
         public string Indian { get; set; }
         public string Italian { get; set; }
         public string Asian { get; set; }
         public string Mexican { get; set; }
+
+    #endregion
 
 
 
