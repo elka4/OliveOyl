@@ -10,6 +10,15 @@ namespace OliveOyl
     {
         static void Main(string[] args)
         {
+            var account = new ShoppingCart
+            {
+
+
+
+
+
+
+            };
         }
     }
 }

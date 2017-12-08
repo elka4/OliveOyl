@@ -6,15 +6,41 @@ using System.Threading.Tasks;
 
 namespace OliveOyl
 {
+
+    enum TypeofIngredient
+
+    {
+        Seafood,
+        Poultry,
+        Vegetables,
+        Spices
+
+
+    }
+
+    enum Units
+    {
+
+        Grams,
+        Pounds,
+        Kilograms,
+        Ounces 
+
+
+    }
+
+
+
+
     class Ingredients
     {
 
 
-        public string Poultry { get; set; }
+        public TypeofIngredient TypeofIngredient { get; set; }
 
-        public string Vegetables { get; set; }
+        public string Amount { get; set; }
+        public Units Units { get; set; }         
 
-        public string Seafood { get; set; }
 
     }
 }

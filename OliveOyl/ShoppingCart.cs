@@ -13,7 +13,21 @@ namespace OliveOyl
         public string BillingAddress { get; set; }
         public string CustomerName { get; set; }
         public decimal Total { get; set; }
-    #endregion
+        public decimal GiftCardBalance { get; set; }
+        #endregion
+
+        #region Methods
+        /// <summary>
+        /// Use Gift card to purchase items 
+        /// </summary>
+        /// <param name="Total">Amount to be paid</param>
+
+        public void UsegiftCard(decimal amount)
+        {
+           GiftCardBalance -= Total;
+        }
+
+        #endregion
 
 
     }

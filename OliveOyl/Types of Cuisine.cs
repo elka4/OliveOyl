@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace OliveOyl
 {
-    class Types_of_Cuisine
+
+    enum TypesofCuisines
+    {
+        Indian,
+        Asian,
+        Italian, 
+        Mexican, 
+        American
+    }
+
+    class Cuisines 
 
 
         //These are the properties for my class Types of Cuisine 
@@ -14,10 +24,8 @@ namespace OliveOyl
     {
 
 
-        public string Indian { get; set; }
-        public string Italian { get; set; }
-        public string Asian { get; set; }
-        public string Mexican { get; set; }
+        public string TypesofCuisines { get; set; }
+
 
     #endregion
 
