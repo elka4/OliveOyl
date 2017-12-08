@@ -13,7 +13,8 @@ namespace OliveOyl
         Asian,
         Italian, 
         Mexican, 
-        American
+        American,
+        Baking
     }
 
     class Cuisines 
@@ -22,7 +23,6 @@ namespace OliveOyl
         //These are the properties for my class Types of Cuisine 
     #region Properties
     {
-
 
         public string TypesofCuisines { get; set; }
 
