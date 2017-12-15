@@ -13,6 +13,8 @@ namespace OliveOyl
         public string BillingAddress { get; set; }
         public string ShippingAddress { get; set; }
         public string CustomerName { get; set; }
+        public string CustomerEmailAddress { get; set; }
+        public string SubscriptionType { get; set; }
         public decimal Total { get; set; }
         public decimal GiftCardBalance { get; set; }
         public decimal PromotionalCodePercent { get; set; }

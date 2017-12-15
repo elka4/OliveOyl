@@ -1,0 +1,7 @@
+C:\Users\R\Documents\GitHub\OliveOyl\OliveOyl\bin\Debug\OliveOyl.exe.config
+C:\Users\R\Documents\GitHub\OliveOyl\OliveOyl\bin\Debug\OliveOyl.exe
+C:\Users\R\Documents\GitHub\OliveOyl\OliveOyl\bin\Debug\OliveOyl.pdb
+C:\Users\R\Documents\GitHub\OliveOyl\OliveOyl\obj\Debug\OliveOyl.csprojResolveAssemblyReference.cache
+C:\Users\R\Documents\GitHub\OliveOyl\OliveOyl\obj\Debug\OliveOyl.csproj.CoreCompileInputs.cache
+C:\Users\R\Documents\GitHub\OliveOyl\OliveOyl\obj\Debug\OliveOyl.exe
+C:\Users\R\Documents\GitHub\OliveOyl\OliveOyl\obj\Debug\OliveOyl.pdb

@@ -10,15 +10,73 @@ namespace OliveOyl
     {
         static void Main(string[] args)
         {
-            var account = new ShoppingCart
+
+            Console.WriteLine("****************************************************");
+            Console.WriteLine("Welcome to OliveOyl");
+            Console.WriteLine("****************************************************");
+
+
+            Console.WriteLine("0: exit");
+            Console.WriteLine("1: Create Customer Account");
+            Console.WriteLine("2: Print all Customer Accounts");
+         
+            Console.Write("Please choose an option:");
+            var choice = Console.ReadLine();
+
+
+            //case by case basis (OR)
+            switch (choice)
             {
 
-             
+                case "0":
+                    Console.WriteLine("Thank you for using Olive Oyl");
+                    return;
+                case "1":
+                    //accept user input to create customer account, user is given an option 
+                    Console.WriteLine("Please enter Customer Name");
+                    var CustomerName = Console.ReadLine();
+                    Console.WriteLine("Please Enter Customer Email Address");
+                    var CustomerEmailAddress = Console.ReadLine();
+
+                    //Introducing a loop to go through the subscriptions enum List 
+                    var CustomerSubscription = Enum.GetNames(typeof(CustomerSubscriptions));
+                    for (var i = 0; i < CustomerSubscription.Length; i++)
+
+                    {
+                        Console.Write($"{i + 1}.{CustomerSubscription[i]}");
+                    }
+                   
+                    Console.Write("Please enter the Subscription you are interested in");
+                    var Subscription = Convert.ToInt32( Console.ReadLine());
+                    var CustomerAccount = OliveOyl.CreateAccount(CustomerEmailAddress, CustomerName, (CustomerSubscriptions)(Subscription - 1));
+                    Console.WriteLine($"CustomerName: {CustomerAccount.CustomerName}, CustomerEmailAddress: {CustomerAccount.CustomerEmailAddress}, CustomerSubscription: {CustomerAccount.SubscriptionType}");
+                 
+                    break;
+                case "2":
+                    //Type to get all accounts 
+                    break;
+                default:
+                    break;
+              
 
 
 
 
-            };
+
+
+            }
+           
+
+
+
+
+
+
+
+
+
+
+
         }
     }
 }
