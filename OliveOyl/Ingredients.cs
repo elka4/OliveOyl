@@ -38,7 +38,24 @@ namespace OliveOyl
         public TypeofIngredient TypeofIngredient { get; set; }
 
         public string Amount { get; set; }
-        public Units Units { get; set; }         
+        public Units Units { get; set; }
+
+
+        #region Method for weight conversion 
+
+        public void ConvertWeight(decimal Amount)
+
+        {
+      
+
+        }
+
+        #endregion
+
+
+
+
+
 
 
     }
