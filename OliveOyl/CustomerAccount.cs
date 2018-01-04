@@ -6,6 +6,16 @@ using System.Threading.Tasks;
 
 namespace OliveOyl
 {
+
+
+    enum CustomerSubscriptions
+    {
+
+        Vegetarian,
+        Family,
+        TwoPeople
+
+    }
     class CustomerAccount
     {
 

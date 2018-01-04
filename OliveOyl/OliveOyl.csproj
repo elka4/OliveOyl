@@ -43,13 +43,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomerAccount.cs" />
-    <Compile Include="Ingredients.cs" />
-    <Compile Include="Meal Subscriptions.cs" />
+    <Compile Include="Recipes.cs" />
     <Compile Include="OliveOyl.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShoppingCart.cs" />
-    <Compile Include="Types of Cuisine.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
