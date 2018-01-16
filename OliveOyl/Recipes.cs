@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OliveOyl
 {
-    enum TypesofCuisines
+    public enum TypesofCuisines
     {
         Indian,
         Asian,
@@ -15,7 +15,7 @@ namespace OliveOyl
         American,
         Baking
     }
-    enum TypeofIngredient
+    public enum TypeofIngredient
 
     {
         Seafood,
@@ -24,7 +24,7 @@ namespace OliveOyl
         Spices
     }
 
-    enum Units
+   public enum Units
     {
 
         Grams,
@@ -37,7 +37,7 @@ namespace OliveOyl
 
 
 
-    class Recipes
+    public class Recipes
     {
 
 

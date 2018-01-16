@@ -13,8 +13,9 @@ namespace OliveOyl
     static class OliveOyl
     {
         //To store list of Accounts Customers have made temporary since I do not know the size of the list
-
-        private static List<CustomerAccount> customeraccounts = new List<CustomerAccount>();
+        //opening a connection to the sql server. creating an instance 
+        private static OliveOylModel db = new OliveOylModel();
+        
 
         public static CustomerAccount CreateAccount(string CustomerEmailAddress, string CustomerName,
                 CustomerSubscriptions Subscription = CustomerSubscriptions.Vegetarian)
@@ -24,18 +25,56 @@ namespace OliveOyl
             {
 
                 CustomerEmailAddress = CustomerEmailAddress,
-                SubscriptionType = Subscription,
+                CustomerSubscription = Subscription,
                 CustomerName = CustomerName
 
             };
-
-            customeraccounts.Add(account);
+            db.Accounts.Add(account);
+            db.SaveChanges();
+            
             return account;
 
 
         }
 
+        public static List<CustomerAccount> GetAllAccounts(string CustomerEmailAddress)
 
+        {
+            return db.Accounts.Where(a => a.CustomerEmailAddress == CustomerEmailAddress).ToList();
+
+        }
+
+        
+
+        public static List<Transactions> GetAllTransactions(int customerID)
+
+
+        {
+
+            return db.Transactions.Where(t => t.CustomerID == customerID).OrderByDescending(t => t.TransactionDate).ToList();
+
+
+
+        }
+
+
+        public static Recipes AddRecipesToCollection(TypeofIngredient TypeofIngredient = TypeofIngredient.Vegetables,TypesofCuisines typesofCuisines = TypesofCuisines.American )
+        {
+
+            var recipe = new Recipes
+            {
+
+                TypeofIngredient = TypeofIngredient,
+                TypesofCuisines = typesofCuisines,
+
+            };
+            db.Recipes.Add(recipe);
+            db.SaveChanges();
+
+            return recipe;
+
+
+        }
 
 
     }

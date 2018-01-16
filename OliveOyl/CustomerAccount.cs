@@ -8,7 +8,7 @@ namespace OliveOyl
 {
 
 
-    enum CustomerSubscriptions
+    public enum CustomerSubscriptions
     {
 
         Vegetarian,
@@ -16,15 +16,15 @@ namespace OliveOyl
         TwoPeople
 
     }
-    class CustomerAccount
+    public class CustomerAccount
     {
 
         //These are my properties for Customer Account 
       
         public string CustomerName { get; set; }
+        public string CustomerID { get; set; }
         public string CustomerEmailAddress { get; set; }
-        public CustomerSubscriptions SubscriptionType { get; set; }
-
-
+        public CustomerSubscriptions CustomerSubscription { get; set; }
+        public decimal SubscriptionPrice { get; set; }
     }
 }

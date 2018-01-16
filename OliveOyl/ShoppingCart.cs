@@ -37,8 +37,6 @@ namespace OliveOyl
             Total = (Total * (1 - PromotionalCodePercent));
         }
 
-
-
         #endregion
 
 

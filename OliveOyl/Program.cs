@@ -18,8 +18,12 @@ namespace OliveOyl
 
             Console.WriteLine("0: exit");
             Console.WriteLine("1: Create Customer Account");
-            Console.WriteLine("2: Print all Customer Accounts");
-         
+            Console.WriteLine("2: Add New Subscription");
+            Console.WriteLine("3: Go to Shopping Cart");
+            Console.WriteLine("4: Find Recipes");
+            Console.WriteLine("5: Print All Transactions");
+
+
             Console.Write("Please choose an option:");
             var choice = Console.ReadLine();
 
@@ -49,11 +53,12 @@ namespace OliveOyl
                     Console.Write("Please enter the Subscription you are interested in");
                     var Subscription = Convert.ToInt32( Console.ReadLine());
                     var CustomerAccount = OliveOyl.CreateAccount(CustomerEmailAddress, CustomerName, (CustomerSubscriptions)(Subscription - 1));
-                    Console.WriteLine($"CustomerName: {CustomerAccount.CustomerName}, CustomerEmailAddress: {CustomerAccount.CustomerEmailAddress}, CustomerSubscription: {CustomerAccount.SubscriptionType}");
+                    Console.WriteLine($"CustomerName: {CustomerAccount.CustomerName}, CustomerEmailAddress: {CustomerAccount.CustomerEmailAddress}, CustomerSubscription: {CustomerAccount.CustomerSubscription()}");
                  
                     break;
                 case "2":
-                    //Type to get all accounts 
+                    Console.WriteLine("Select Subscription to add ");
+                    var sub = Convert.ToInt32(Console.ReadLine());
                     break;
                 default:
                     break;
@@ -65,18 +70,17 @@ namespace OliveOyl
 
 
             }
-           
 
 
 
 
 
-
-
-
-
-
+            
 
         }
+
+       
+        
+
     }
 }
