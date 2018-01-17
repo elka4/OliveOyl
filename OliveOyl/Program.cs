@@ -16,7 +16,7 @@ namespace OliveOyl
             Console.WriteLine("****************************************************");
 
 
-            Console.WriteLine("0: exit");
+            Console.WriteLine("0: Exit");
             Console.WriteLine("1: Create Customer Account");
             Console.WriteLine("2: Add New Subscription");
             Console.WriteLine("3: Go to Shopping Cart");
@@ -53,12 +53,14 @@ namespace OliveOyl
                     Console.Write("Please enter the Subscription you are interested in");
                     var Subscription = Convert.ToInt32( Console.ReadLine());
                     var CustomerAccount = OliveOyl.CreateAccount(CustomerEmailAddress, CustomerName, (CustomerSubscriptions)(Subscription - 1));
-                    Console.WriteLine($"CustomerName: {CustomerAccount.CustomerName}, CustomerEmailAddress: {CustomerAccount.CustomerEmailAddress}, CustomerSubscription: {CustomerAccount.CustomerSubscription()}");
+                    Console.WriteLine($"CustomerName: {CustomerAccount.CustomerName}, CustomerEmailAddress: {CustomerAccount.CustomerEmailAddress}");
                  
                     break;
                 case "2":
                     Console.WriteLine("Select Subscription to add ");
-                    var sub = Convert.ToInt32(Console.ReadLine());
+                    var Subscription1 = Convert.ToInt32(Console.ReadLine());
+                    var subs = OliveOyl.AddSubscription((CustomerSubscriptions)(Subscription1 -1));
+
                     break;
                 default:
                     break;

@@ -14,6 +14,7 @@ namespace OliveOyl
     {
         //To store list of Accounts Customers have made temporary since I do not know the size of the list
         //opening a connection to the sql server. creating an instance 
+
         private static OliveOylModel db = new OliveOylModel();
         
 
@@ -76,6 +77,23 @@ namespace OliveOyl
 
         }
 
+        public static CustomerAccount AddSubscription(CustomerSubscriptions  CustomerSubscriptions = CustomerSubscriptions.Vegetarian)
+        {
 
+            var subscription = new CustomerAccount
+            {
+
+                CustomerSubscription = CustomerSubscriptions,   
+
+            };
+            db.Accounts.Add(subscription);
+            db.SaveChanges();
+
+            return subscription;
+
+
+        }
+
+      
     }
 }
