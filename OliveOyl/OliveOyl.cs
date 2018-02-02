@@ -10,17 +10,30 @@ namespace OliveOyl
     //This is my Factory Class 
 
 
-    static class OliveOyl
+    public static class OliveOyl
     {
         //To store list of Accounts Customers have made temporary since I do not know the size of the list
         //opening a connection to the sql server. creating an instance 
 
         private static OliveOylModel db = new OliveOylModel();
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="CustomerEmailAddress">Customer Email Address for the Account</param>
+        /// <param name="CustomerName">Name of the Customer</param>
+        /// <param name="Subscription">Type of Subscription</param>
+        /// <returns>Customer Account</returns>
+        /// <exception cref="ArgumentNullException"/>
         
 
         public static CustomerAccount CreateAccount(string CustomerEmailAddress, string CustomerName,
                 CustomerSubscriptions Subscription = CustomerSubscriptions.Vegetarian)
         {
+
+            if (string.IsNullOrEmpty(CustomerEmailAddress))
+                throw new ArgumentNullException("CustomerEmailAddress", "Email Address cannot be empty.");
 
             var account = new CustomerAccount
             {

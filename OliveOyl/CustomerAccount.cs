@@ -25,6 +25,7 @@ namespace OliveOyl
         public string CustomerName { get; set; }
         [Key]
         public string CustomerID { get; set; }
+        [StringLength(100, ErrorMessage ="Email Address should be of 100 characters")]
         public string CustomerEmailAddress { get; set; }
         public CustomerSubscriptions CustomerSubscription { get; set; }
         public decimal SubscriptionPrice { get; set; }

@@ -36,25 +36,36 @@ namespace OliveOyl
                     Console.WriteLine("Thank you for using Olive Oyl");
                     return;
                 case "1":
-                    //accept user input to create customer account, user is given an option 
-                    Console.WriteLine("Please enter Customer Name");
-                    var CustomerName = Console.ReadLine();
-                    Console.WriteLine("Please Enter Customer Email Address");
-                    var CustomerEmailAddress = Console.ReadLine();
+                   
+                        //accept user input to create customer account, user is given an option 
+                        Console.WriteLine("Please enter Customer Name");
+                        var CustomerName = Console.ReadLine();
+                        Console.WriteLine("Please Enter Customer Email Address");
+                        var CustomerEmailAddress = Console.ReadLine();
 
-                    //Introducing a loop to go through the subscriptions enum List 
-                    var CustomerSubscription = Enum.GetNames(typeof(CustomerSubscriptions));
-                    for (var i = 0; i < CustomerSubscription.Length; i++)
+                        //Introducing a loop to go through the subscriptions enum List 
+                        var CustomerSubscription = Enum.GetNames(typeof(CustomerSubscriptions));
+                        for (var i = 0; i < CustomerSubscription.Length; i++)
+
+                        {
+                            Console.Write($"{i + 1}.{CustomerSubscription[i]}");
+                        }
+
+                        Console.Write("Please enter the Subscription you are interested in");
+                    try
+                    {
+                        var Subscription = Convert.ToInt32(Console.ReadLine());
+                        var CustomerAccount = OliveOyl.CreateAccount(CustomerEmailAddress, CustomerName, (CustomerSubscriptions)(Subscription - 1));
+                        Console.WriteLine($"CustomerName: {CustomerAccount.CustomerName}, CustomerEmailAddress: {CustomerAccount.CustomerEmailAddress}");
+                    }
+                    catch (FormatException)
 
                     {
-                        Console.Write($"{i + 1}.{CustomerSubscription[i]}");
+                        Console.WriteLine("Subscription Type option is invalid");
+
                     }
-                   
-                    Console.Write("Please enter the Subscription you are interested in");
-                    var Subscription = Convert.ToInt32( Console.ReadLine());
-                    var CustomerAccount = OliveOyl.CreateAccount(CustomerEmailAddress, CustomerName, (CustomerSubscriptions)(Subscription - 1));
-                    Console.WriteLine($"CustomerName: {CustomerAccount.CustomerName}, CustomerEmailAddress: {CustomerAccount.CustomerEmailAddress}");
-                 
+                    catch(ArgumentNullException)
+
                     break;
                 case "2":
                     Console.WriteLine("Select Subscription to add ");
